@@ -1,0 +1,14 @@
+@use "./../partials/palette";
+
+html {
+    height: 100vh;
+    background-image: linear-gradient(30deg, #c8a0f8, #befcff);
+    background-attachment: fixed;
+    font-family: interstate-mono, monospace;
+    font-weight: 300;
+    color: palette.$accent-color;
+}
+
+footer {
+    text-align: center;
+}

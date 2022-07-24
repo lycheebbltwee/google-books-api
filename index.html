@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./assets/annoh-tnpoo-001.ico" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/xvp0deo.css" />
+        <script src="./scripts/script.js" type="module" defer></script>
+        <title>Book Looker</title>
+    </head>
+    <body>
+        <main>
+            <div class="wrapper">
+                <h1>Book Looker</h1>
+                <form class="search">
+                    <input
+                        type="text"
+                        placeholder="Search for books by keyword / title / author"
+                        id="inputSearch"
+                        class="search__bar"
+                    />
+                    <button class="search__button" id="searchBtn">
+                        Search
+                    </button>
+                </form>
+                <div class="search-count" id="searchCount"></div>
+                <div class="book-list" id="bookList"></div>
+            </div>
+        </main>
+        <footer>
+            <p>Built using Google Books API.</p>
+            <p>By Anh Thuy Nguyen.</p>
+        </footer>
+    </body>
+</html>
