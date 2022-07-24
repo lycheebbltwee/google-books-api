@@ -4,17 +4,12 @@ import {
     clearNode,
     createWrapper,
 } from "./dom-utilities.js";
+import { joinString, truncateString } from "./string-utilities.js";
 
 // DOM Variables
 const inputSearch = document.getElementById("inputSearch");
-const searchCount = document.getElementById("searchCount");
 const searchBtn = document.getElementById("searchBtn");
 const bookList = document.querySelector(".book-list");
-
-const createQuery = (string) => {
-    const strArr = string.split(" ");
-    return strArr.join("+");
-};
 
 const searchBooks = async (query) => {
     try {
@@ -42,32 +37,43 @@ const searchBooks = async (query) => {
 
         console.log(searchResults);
 
-        if (query) {
-            addToNode(
-                searchCount,
-                "p",
-                `Showing top ${searchResults.length} books based on "${inputSearch.value}"`,
-            );
-        }
-
         for (let i = 0; i < searchResults.length; i++) {
-            createWrapper(bookList, "book-item");
+            const { title, authors, description, imageLinks } =
+                searchResults[i];
+            const shortDesc = truncateString(`${description}`, 20);
 
-            addToNode(bookList, "p", `${searchResults[i].title}`);
+            createWrapper(bookList, "book-item");
+            imageLinks
+                ? addImage(bookList, `${imageLinks.thumbnail}`, `${title}`)
+                : addImage(
+                      bookList,
+                      "https://via.placeholder.com/128x200",
+                      "No image available",
+                  );
+            addToNode(bookList, "h2", "book-item__title", `${title}`);
+            addToNode(bookList, "p", "book-item__author", `${authors}`);
+            description
+                ? addToNode(
+                      bookList,
+                      "p",
+                      "book-item__description",
+                      `${shortDesc}`,
+                  )
+                : addToNode(
+                      bookList,
+                      "p",
+                      "book-item__description",
+                      `No description available`,
+                  );
         }
     } catch (error) {
         new Error("Oops, something went wrong");
     }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    searchBooks();
-});
-
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     clearNode(bookList);
-    const searchQuery = createQuery(inputSearch.value);
-    console.log(searchQuery);
+    const searchQuery = joinString(inputSearch.value);
     searchBooks(searchQuery);
 });
