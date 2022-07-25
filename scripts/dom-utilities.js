@@ -14,11 +14,11 @@ export const addImage = (grandParent, link, title) => {
     grandParent.lastChild.appendChild(img);
 };
 
-export const createWrapper = (parent, name) => {
+export const createWrapper = (parent, name, id) => {
     const div = document.createElement("div");
     parent.appendChild(div);
     div.className = name;
-    div.id = name;
+    div.id = id;
 };
 
 export const clearNode = (parentNode) => {

@@ -39,7 +39,7 @@ h2 {
 
 .wrapper {
   width: 80%;
-  margin: 15vh auto 2%;
+  margin: 10vh auto 2%;
   padding: 2rem;
   background-color: #f9e8de;
   box-shadow: 0 4px 8px 0 rgba(73, 67, 84, 0.2), 0 6px 20px 0 rgba(73, 67, 84, 0.19);
@@ -81,13 +81,11 @@ h2 {
   font-size: 1.1rem;
   font-family: inherit;
   font-weight: inherit;
+  transition-duration: 0.2s;
 }
-
-.search-count {
-  font-weight: 400;
-  text-align: left;
-  width: 70%;
-  margin-bottom: 3rem;
+.search__button:hover {
+  background-color: #f4a5a0;
+  cursor: pointer;
 }
 
 .book-list {
@@ -95,7 +93,6 @@ h2 {
   height: auto;
   text-align: left;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
   row-gap: 1rem;
 }
@@ -105,6 +102,8 @@ h2 {
   grid-template-columns: 130px repeat(1, 1fr);
   align-items: flex-start;
   column-gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ee7577;
 }
 .book-item__title {
   grid-column: 2;
@@ -118,4 +117,40 @@ h2 {
 }
 .book-item__img {
   grid-row: 1/span 5;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__content {
+  width: 60%;
+  min-height: 50vh;
+  margin: 10% auto;
+  padding: 2rem;
+  color: #494354;
+  background-color: #f9e8de;
+  box-shadow: 0 4px 8px 0 rgba(73, 67, 84, 0.2), 0 6px 20px 0 rgba(73, 67, 84, 0.19);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.modal__close {
+  display: inline-block;
+  font-size: 2.5rem;
+  margin-top: -1rem;
+}
+
+.publication {
+  width: 30%;
+}
+
+.detail {
+  width: 60%;
 }
