@@ -2,7 +2,7 @@
 
 .wrapper {
     width: 80%;
-    margin: 15vh auto 2%;
+    margin: 10vh auto 2%;
     padding: 2rem;
     background-color: palette.$lightest;
     box-shadow: 0 4px 8px 0 rgba(73, 67, 84, 0.2),
@@ -35,58 +35,5 @@
         &:focus {
             outline: none;
         }
-    }
-
-    &__button {
-        background-color: palette.$accent-color;
-        color: palette.$lightest;
-        border: none;
-        border-radius: 50px;
-        width: 20rem;
-        padding: 1rem;
-        font-size: 1.1rem;
-        font-family: inherit;
-        font-weight: inherit;
-    }
-}
-
-.search-count {
-    font-weight: 400;
-    text-align: left;
-    width: 70%;
-    margin-bottom: 3rem;
-}
-
-.book-list {
-    width: 80%;
-    height: auto;
-    text-align: left;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 1rem;
-}
-
-.book-item {
-    display: grid;
-    grid-template-columns: 130px repeat(1, 1fr);
-    align-items: flex-start;
-    column-gap: 0.75rem;
-
-    &__title {
-        grid-column: 2;
-        grid-row: 1 / 2;
-    }
-
-    &__author {
-        grid-column: 2;
-    }
-
-    &__description {
-        grid-column: 2;
-    }
-
-    &__img {
-        grid-row: 1 / span 5;
     }
 }
