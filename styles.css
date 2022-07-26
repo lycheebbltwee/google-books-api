@@ -37,6 +37,23 @@ h2 {
   margin-bottom: 1rem;
 }
 
+button {
+  background-color: #494354;
+  color: #f9e8de;
+  border: none;
+  border-radius: 50px;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: inherit;
+  transition-duration: 0.2s;
+}
+button:hover {
+  background-color: #f4a5a0;
+  cursor: pointer;
+}
+
 .wrapper {
   width: 80%;
   margin: 10vh auto 2%;
@@ -71,22 +88,6 @@ h2 {
 .search__bar:focus {
   outline: none;
 }
-.search__button {
-  background-color: #494354;
-  color: #f9e8de;
-  border: none;
-  border-radius: 50px;
-  width: 20rem;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-family: inherit;
-  font-weight: inherit;
-  transition-duration: 0.2s;
-}
-.search__button:hover {
-  background-color: #f4a5a0;
-  cursor: pointer;
-}
 
 .book-list {
   width: 80%;
@@ -111,6 +112,7 @@ h2 {
 }
 .book-item__author {
   grid-column: 2;
+  font-style: italic;
 }
 .book-item__description {
   grid-column: 2;
@@ -120,7 +122,9 @@ h2 {
 }
 
 .modal {
+  display: none;
   position: fixed;
+  overflow: scroll;
   z-index: 1;
   left: 0;
   top: 0;
@@ -132,7 +136,9 @@ h2 {
 .modal__content {
   width: 60%;
   min-height: 50vh;
+  max-height: 55vh;
   margin: 10% auto;
+  overflow: scroll;
   padding: 2rem;
   color: #494354;
   background-color: #f9e8de;
@@ -145,12 +151,29 @@ h2 {
   display: inline-block;
   font-size: 2.5rem;
   margin-top: -1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .publication {
   width: 30%;
+  font-size: 13px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.publication__img {
+  margin-bottom: 3rem;
 }
 
 .detail {
   width: 60%;
+}
+.detail__subtitle {
+  margin-bottom: 3rem;
+}
+.detail__author-year {
+  margin-bottom: 3rem;
+}
+.detail__genre {
+  margin-bottom: 3rem;
 }

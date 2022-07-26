@@ -1,8 +1,9 @@
 @use "./../partials/palette";
 
 .modal {
-    // display: none; /* Hidden by default */
+    display: none;
     position: fixed;
+    overflow: scroll;
     z-index: 1;
     left: 0;
     top: 0;
@@ -14,7 +15,9 @@
     &__content {
         width: 60%;
         min-height: 50vh;
+        max-height: 55vh;
         margin: 10% auto;
+        overflow: scroll;
         padding: 2rem;
         color: palette.$accent-color;
         background-color: palette.$lightest;
@@ -29,13 +32,34 @@
         display: inline-block;
         font-size: 2.5rem;
         margin-top: -1rem;
+        padding: 1rem;
+        cursor: pointer;
     }
 }
 
 .publication {
     width: 30%;
+    font-size: 13px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+
+    &__img {
+        margin-bottom: 3rem;
+    }
 }
 
 .detail {
     width: 60%;
+
+    &__subtitle {
+        margin-bottom: 3rem;
+    }
+
+    &__author-year {
+        margin-bottom: 3rem;
+    }
+
+    &__genre {
+        margin-bottom: 3rem;
+    }
 }

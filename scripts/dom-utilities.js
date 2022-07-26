@@ -4,6 +4,7 @@ export const addToNode = (grandParent, nodeType, name, nodeContent) => {
     node.className = name;
     node.appendChild(textNode);
     grandParent.lastChild.appendChild(node);
+    return node;
 };
 
 export const addImage = (grandParent, link, title) => {

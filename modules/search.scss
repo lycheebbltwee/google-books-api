@@ -36,22 +36,4 @@
             outline: none;
         }
     }
-
-    &__button {
-        background-color: palette.$accent-color;
-        color: palette.$lightest;
-        border: none;
-        border-radius: 50px;
-        width: 20rem;
-        padding: 1rem;
-        font-size: 1.1rem;
-        font-family: inherit;
-        font-weight: inherit;
-        transition-duration: 0.2s;
-
-        &:hover {
-            background-color: palette.$tint-lightest;
-            cursor: pointer;
-        }
-    }
 }
