@@ -101,7 +101,9 @@ button:hover {
 .book-item {
   display: grid;
   grid-template-columns: 130px repeat(1, 1fr);
+  grid-template-rows: 3.25rem repeat(5, 2.75rem);
   align-items: flex-start;
+  margin-bottom: 1rem;
   column-gap: 0.75rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ee7577;
@@ -116,9 +118,18 @@ button:hover {
 }
 .book-item__description {
   grid-column: 2;
+  grid-row: 4;
+}
+.book-item__btn {
+  grid-column: 2;
+  grid-row: 6;
+  box-sizing: border-box;
+  block-size: 2.75rem;
+  padding: 0.5rem;
+  margin: auto 0 auto auto;
 }
 .book-item__img {
-  grid-row: 1/span 5;
+  grid-row: 1/span 6;
 }
 
 .modal {
